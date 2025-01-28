@@ -1,32 +1,32 @@
-import { Container } from "@/components/Container";
-import { Projects } from "@/components/Projects";
-import { Timeline } from "@/components/Timeline";
-import { user } from "@/constants/user";
-import Image from "next/image";
+import { Container } from '@/components/Container';
+import { Projects } from '@/components/Projects';
+import { Timeline } from '@/components/Timeline';
+import { user } from '@/constants/user';
+import Image from 'next/image';
 import {
   AiOutlineGithub,
   AiOutlineLinkedin,
   AiOutlineTwitter,
-} from "react-icons/ai";
+} from 'react-icons/ai';
 
 export default function ProjectsPage() {
   const socials = [
+    // {
+    //   name: "twitter",
+    //   icon: (
+    //     <AiOutlineTwitter className="h-5 w-5 hover:text-primary transition duration-150" />
+    //   ),
+    //   link: user.twitter,
+    // },
     {
-      name: "twitter",
-      icon: (
-        <AiOutlineTwitter className="h-5 w-5 hover:text-primary transition duration-150" />
-      ),
-      link: user.twitter,
-    },
-    {
-      name: "LinkedIn",
+      name: 'LinkedIn',
       icon: (
         <AiOutlineLinkedin className="h-5 w-5 hover:text-primary transition duration-150" />
       ),
       link: user.linkedin,
     },
     {
-      name: "GitHub",
+      name: 'GitHub',
       icon: (
         <AiOutlineGithub className="h-5 w-5 hover:text-primary transition duration-150" />
       ),
@@ -39,21 +39,21 @@ export default function ProjectsPage() {
         <div>
           <h1 className="font-bold text-3xl md:text-5xl md:leading-tight text-zinc-50 max-w-3xl">
             Hey! I'm
-            <span className="text-cyan-500"> Tyler Durden</span> and I'm a full
-            stack soap engineer.
+            <span className="text-cyan-500"> Kamyar Mivehchi</span> and I'm a
+            full stack Web and Mobile engineer.
           </h1>
           <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 md:leading-loose tracking-wide">
-            I've been obsessed with technology ever since I was a kid. When I
-            wasn't taking apart my family's computer (sorry, mom), I was
-            teaching myself how to code. Fast forward a few years, and now I'm a
-            full-fledged code ninja with an insatiable thirst for creating
-            beautiful websites and functional applications.
+            With a background in R&D analytical chemistry, I bring a
+            problem-solving mindset to software development. My experience in
+            product development and process optimization taught me how to
+            analyze complex systems and create efficient solutions—skills that
+            translate seamlessly into coding.
           </p>
         </div>
 
         <div className="order-first md:order-last">
           <Image
-            src={`/images/avatar.png`}
+            src={`/images/avatar-1.png`}
             width={200}
             height={200}
             alt="Avatar"
@@ -65,8 +65,7 @@ export default function ProjectsPage() {
                 key={`footer-link-${idx}`}
                 href={socialLink.link}
                 className="text-zinc-500 text-sm relative"
-                target="__blank"
-              >
+                target="__blank">
                 <span className="relative z-10 px-2 py-2 inline-block hover:text-cyan-500">
                   {socialLink.icon}
                 </span>
@@ -78,14 +77,15 @@ export default function ProjectsPage() {
 
       <div className="max-w-5xl mx-auto px-8 mt-10 relative">
         <p className="text-zinc-400 text-sm md:text-base mt-8 md:leading-loose tracking-wide">
-          When I'm not busy slaying bugs and writing code, I'm usually busy
-          indulging in my two favorite hobbies: hot sauce and dad jokes. I
-          firmly believe that a good laugh and a dash of hot sauce can fix just
-          about anything, including bugs in my code (okay, maybe not that last
-          part).
+          Now a Full-Stack Engineer with expertise in React, Next.js, Node.js,
+          Docker, and PostgreSQL, I specialize in scalable web applications, API
+          optimization, and automation. Currently earning a Full Stack Web
+          Development certificate from UC Irvine, I’m passionate about building
+          innovative solutions and collaborating with teams that push technology
+          forward.
         </p>
         <p className="text-zinc-400 text-sm md:text-base mt-8 md:leading-loose tracking-wide">
-          Here's a timeline of what I've been upto
+          Here's a timeline of what I've been up to
         </p>
         <Timeline />
       </div>

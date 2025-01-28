@@ -1,16 +1,34 @@
-import { projects } from "@/constants/projects";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import React, { useState } from "react";
-import { AiFillCode } from "react-icons/ai";
+import { projects } from '@/constants/projects';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import { encode } from 'qss';
+import { useState } from 'react';
 
-import { HiOutlineCodeBracketSquare } from "react-icons/hi2";
-
-import { BsTerminal } from "react-icons/bs";
+import { BsTerminal } from 'react-icons/bs';
 
 export const Projects = () => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  function getLinkPreview(url: string) {
+    const width = 200;
+    const height = 125;
+
+    // Simplifies things by encoding our microlink params into a query string.
+    const params = encode({
+      url,
+      screenshot: true,
+      meta: false,
+      embed: 'screenshot.url',
+      colorScheme: 'dark',
+      'viewport.isMobile': true,
+      'viewport.deviceScaleFactor': 1,
+
+      'viewport.width': width * 3,
+      'viewport.height': height * 3,
+    });
+
+    return `https://api.microlink.io/?${params}`;
+  }
   return (
     <div className="max-w-5xl mx-auto px-8">
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 mt-20">
@@ -20,8 +38,7 @@ export const Projects = () => {
             key={project?.link}
             className="relative group  block p-2"
             onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
+            onMouseLeave={() => setHoveredIndex(null)}>
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
@@ -42,9 +59,9 @@ export const Projects = () => {
             <div className=" rounded-2xl overflow-hidden bg-zinc-800 border border-transparent group-hover:border-zinc-700 relative z-50">
               <div className="relative z-50">
                 <div className="h-44 sm:h-60 md:h-44 w-full relative  transition duration-500 bg-black/10 group-hover:bg-transparent">
-                  {/* <div className=" group-hover:bg-zinc-800 absolute h-20 bg-zinc-900 w-full bottom-0 z-20 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] transition duration-500" /> */}
+                  <div className=" group-hover:bg-zinc-800 absolute h-20 bg-zinc-900 w-full bottom-0 z-20 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] transition duration-500" />
                   <Image
-                    src={project.image}
+                    src={getLinkPreview(project.link)}
                     alt={project.title}
                     fill
                     className=" absolute inset-0 object-cover object-center  mix-blend-multiply"
@@ -73,8 +90,7 @@ export const Projects = () => {
                     <BsTerminal className="h-3 w-3 stroke-1.5 text-zinc-500 group-hover:text-cyan-500" />
                     <p
                       // href={project.link}
-                      className="text-zinc-500 group-hover:text-cyan-500 text-xs"
-                    >
+                      className="text-zinc-500 group-hover:text-cyan-500 text-xs">
                       View Source
                     </p>
                   </div>

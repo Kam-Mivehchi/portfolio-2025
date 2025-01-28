@@ -1,5 +1,5 @@
-import { Container } from "@/components/Container";
-import { Projects } from "@/components/Projects";
+import { Container } from '@/components/Container';
+import { Projects } from '@/components/Projects';
 
 export default function ProjectsPage() {
   return (
@@ -10,9 +10,9 @@ export default function ProjectsPage() {
           <span className="text-cyan-500"> lot of things</span>
         </h1>
         <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 md:leading-loose tracking-wide">
-          Come explore the fruits of my labor, from small experiments to
-          full-blown web applications, each project showcases my love for coding
-          and design.
+          Discover the results of my work—from small creative experiments to
+          fully realized web applications. Each project reflects my passion for
+          coding and design.
         </p>
       </div>
 

@@ -1,39 +1,39 @@
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 export const Contact = () => {
   const [open, setOpen] = useState(false);
-  const [success, setSuccess] = useState<string | null>("");
-  const [error, setError] = useState<string | null>("");
+  const [success, setSuccess] = useState<string | null>('');
+  const [error, setError] = useState<string | null>('');
   const [loading, setLoading] = useState<Boolean>(false);
 
   const [formState, setFormState] = useState({
     email: {
-      value: "",
-      error: "",
+      value: '',
+      error: '',
     },
     message: {
-      value: "",
-      error: "",
+      value: '',
+      error: '',
     },
   });
 
   const dropIn = {
     hidden: {
-      y: "4vh",
+      y: '4vh',
       opacity: 0,
     },
     visible: {
-      y: "0",
+      y: '0',
       opacity: 1,
       transition: {
         duration: 0.2,
-        type: "stiff",
+        type: 'stiff',
         damping: 25,
       },
     },
     exit: {
-      y: "4vh",
+      y: '4vh',
       opacity: 0,
     },
   };
@@ -50,7 +50,7 @@ export const Contact = () => {
 
   const handleSubmit = async () => {
     let { email, message } = formState;
-    console.log("email", email, "message", message);
+    console.log('email', email, 'message', message);
     let updatedState = { ...formState };
     let regex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -79,17 +79,17 @@ export const Contact = () => {
     setOpen(!open);
     setFormState({
       email: {
-        value: "",
-        error: "",
+        value: '',
+        error: '',
       },
       message: {
-        value: "",
-        error: "",
+        value: '',
+        error: '',
       },
     });
     setLoading(false);
-    setError("");
-    setSuccess("");
+    setError('');
+    setSuccess('');
   };
   return (
     <AnimatePresence initial={false} onExitComplete={() => null}>
@@ -100,8 +100,7 @@ export const Contact = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="mb-4 rounded-xl shadow-2xl bg-zinc-800   flex flex-col overflow-hidden mx-4 md:mx-0"
-          >
+            className="mb-4 rounded-xl shadow-2xl bg-zinc-800   flex flex-col overflow-hidden mx-4 md:mx-0">
             <div className="p-4 bg-zinc-700 ">
               <h2 className="text-zinc-200 font-bold text-sm md:text-xl ">
                 Have a question? Drop in your message 👇
@@ -117,7 +116,7 @@ export const Contact = () => {
               <input
                 type="email"
                 value={formState.email.value}
-                onChange={(e) => onChangeHandler("email", e.target.value)}
+                onChange={(e) => onChangeHandler('email', e.target.value)}
                 className="text-zinc-400 rounded-md border bg-zinc-800 border-zinc-700 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm  mb-1"
                 placeholder="johndoe@xyz.com"
               />
@@ -132,7 +131,7 @@ export const Contact = () => {
               <textarea
                 rows={3}
                 value={formState.message.value}
-                onChange={(e) => onChangeHandler("message", e.target.value)}
+                onChange={(e) => onChangeHandler('message', e.target.value)}
                 className="text-zinc-400 rounded-md border border-zinc-700 py-1 px-2 bg-zinc-800 focus:outline-none focus:border-gray-400 placeholder:text-sm   mb-1"
                 placeholder="I'd love a compliment from you."
               />
@@ -141,9 +140,8 @@ export const Contact = () => {
               </small>
               <button
                 onClick={handleSubmit}
-                className="text-zinc-100  w-full px-4 py-2 md:py-4 border-2 border-zinc-800 bg-zinc-700 rounded-md font-normal text-sm  mb-4 transition duration-200 hover:shadow-none"
-              >
-                {loading ? "Submitting..." : "Submit"}
+                className="text-zinc-100  w-full px-4 py-2 md:py-4 border-2 border-zinc-800 bg-zinc-700 rounded-md font-normal text-sm  mb-4 transition duration-200 hover:shadow-none">
+                {loading ? 'Submitting...' : 'Submit'}
               </button>
               <small className="h-4 min-h-4 mb-4">
                 {success && (
@@ -160,16 +158,14 @@ export const Contact = () => {
         )}
         <button
           onClick={handleButtonClick}
-          className="bg-zinc-700  w-14 h-14 rounded-full  flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200 shadow-lg"
-        >
+          className="bg-zinc-700  w-14 h-14 rounded-full  flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200 shadow-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            className="w-6 h-6 text-zinc-100"
-          >
+            className="w-6 h-6 text-zinc-100">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"

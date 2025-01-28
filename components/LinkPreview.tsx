@@ -1,9 +1,8 @@
-import { Portal, Transition } from "@headlessui/react";
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import cx from "clsx";
-import Image from "next/image";
-import { encode } from "qss";
-import React from "react";
+import { Portal, Transition } from '@headlessui/react';
+import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
+import Image from 'next/image';
+import { encode } from 'qss';
+import React from 'react';
 
 export const LinkPreview = ({
   children,
@@ -17,20 +16,20 @@ export const LinkPreview = ({
   const width = 200;
   const height = 125;
   const quality = 50;
-  const layout = "fixed";
+  const layout = 'fixed';
 
   // Simplifies things by encoding our microlink params into a query string.
   const params = encode({
     url,
     screenshot: true,
     meta: false,
-    embed: "screenshot.url",
-    colorScheme: "dark",
-    "viewport.isMobile": true,
-    "viewport.deviceScaleFactor": 1,
+    embed: 'screenshot.url',
+    colorScheme: 'dark',
+    'viewport.isMobile': true,
+    'viewport.deviceScaleFactor': 1,
 
-    "viewport.width": width * 3,
-    "viewport.height": height * 3,
+    'viewport.width': width * 3,
+    'viewport.height': height * 3,
   });
 
   const src = `https://api.microlink.io/?${params}`;
@@ -76,8 +75,7 @@ export const LinkPreview = ({
         openDelay={50}
         onOpenChange={(open) => {
           setOpen(open);
-        }}
-      >
+        }}>
         <HoverCardPrimitive.Trigger className={className} href={url}>
           {children}
         </HoverCardPrimitive.Trigger>
@@ -89,16 +87,14 @@ export const LinkPreview = ({
             enter="transform transition duration-300 origin-bottom ease-out"
             enterFrom="opacity-0 translate-y-2 scale-0"
             enterTo="opacity-100 translate-y-0 scale-100"
-            className=" rounded-xl"
-          >
+            className=" rounded-xl">
             <a
               href={url}
               className="block p-1 bg-gradient-to-t from-slate-900 via-slate-800 to-slate-600 border border-transparent  rounded-xl hover:border-zinc-800 relative overflow-hidden"
               // Unfortunate hack to remove the weird whitespace left by
               // next/image wrapper div
               // https://github.com/vercel/next.js/issues/18915
-              style={{ fontSize: 0 }}
-            >
+              style={{ fontSize: 0 }}>
               <div className="absolute inset-0 w-full h-full z-20 bg-zinc-900 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)]" />
               <Image
                 src={src}

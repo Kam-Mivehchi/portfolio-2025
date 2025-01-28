@@ -1,45 +1,94 @@
-import { stack } from "./stack";
+import { stack } from './stack';
 
 export const projects = [
   {
-    title: "Algochurn",
+    title: 'Restaurant Association',
     description:
-      "A web app that allows users to practice for front-end and UI interviews.",
-    image: "/images/projects/algochurn.png",
-    stack: [stack.nextjs, stack.tailwindcss, stack.typescript, stack.react],
-    link: "https://algochurn.com",
+      'An automated blog platform that scrapes restaurant industry news and generates content using AI.',
+    image: '/images/projects/restaurant-association.webp',
+    imgClass: 'relative w-1/2 h-auto',
+    stack: [
+      stack.nextjs,
+      stack.typescript,
+      stack.tailwindcss,
+      stack.react,
+      stack.docker,
+    ],
+    link: 'https://restaurantassociation.com',
   },
   {
-    title: "Aceternity",
+    title: 'Westmont House',
     description:
-      "A web design and development agency that gets the job done. Somehow.",
-    image: "/images/projects/aceternity.png",
-    stack: [stack.nextjs, stack.tailwindcss, stack.typescript, stack.react],
-    link: "https://aceternity.com",
-  },
+      'A beautifully crafted website for an assisted living facility in McLean, VA.',
+    image: '/images/projects/westmont.svg',
+    imgClass: 'relative w-full h-full',
 
-  {
-    title: "Tailwind Master Kit",
-    description:
-      "Buy premium tailwind components and templates for your next project.",
-    image: "/images/projects/tailwindmasterkit.png",
     stack: [stack.nextjs, stack.tailwindcss, stack.typescript, stack.react],
-    link: "https://tailwindmasterkit.com",
+    link: 'https://westmonthouse.com',
+  },
+  // {
+  //   title: 'Customerology',
+  //   description:
+  //     'A suite of platforms for marketing and customer engagement, helping businesses connect with and retain their customers effectively.',
+  //   image: '/images/projects/customerology.png',
+  //   stack: [stack.nextjs, stack.typescript, stack.tailwindcss, stack.react],
+  //   link: 'https://customerology.com',
+  // },
+  {
+    title: 'Zip Loyalty',
+    description:
+      'A loyalty platform that helps businesses measure and reward customer loyalty.',
+    image: '/images/projects/ziployalty.webp',
+    imgClass: 'relative w-full h-full',
+
+    stack: [stack.reactNative, stack.typescript, stack.tailwindcss],
+    link: 'https://ziployalty.com',
   },
   {
-    title: "Box Shadows",
+    title: 'ZipTunes',
     description:
-      "Copy and paste beautiful box shadows that stand out for your next project.",
-    image: "/images/projects/boxshadows.png",
-    stack: [stack.nextjs, stack.tailwindcss, stack.typescript, stack.react],
-    link: "https://manuarora.in/boxshadows",
+      'A B2B music streaming platform designed for businesses to create the perfect ambiance.',
+    image: '/images/projects/ziptunes.svg',
+    imgClass: 'relative w-full h-full',
+
+    stack: [stack.react, stack.typescript, stack.tailwindcss],
+    link: 'https://zip-tunes.com',
   },
   {
-    title: "PlaceholderTech",
+    title: 'FullFork',
     description:
-      "Your one-stop shop for web app needs tailored to your requirements.",
-    image: "/images/projects/placeholdertech.png",
+      'A mobile app designed to help restaurants release discounts and coupon codes to boost customer engagement.',
+    image: '/images/projects/fullfork.svg',
+    imgClass: 'relative w-full h-full',
+
+    stack: [stack.reactNative, stack.typescript, stack.apple, stack.android],
+    link: 'https://fullfork.com',
+  },
+  {
+    title: 'Plum POS',
+    description:
+      'A comprehensive POS system for restaurants that simplifies operations and optimizes workflows.',
+    image: '/images/projects/plumpos.svg',
+    imgClass: 'relative w-full h-full',
+
     stack: [stack.nextjs, stack.tailwindcss, stack.typescript, stack.react],
-    link: "https://placeholdertech.in",
+    link: 'https://plumpos.com',
+  },
+  {
+    title: 'Pl8Chat',
+    description:
+      'A customer support chat platform tailored for restaurants, enhancing communication and guest satisfaction.',
+    image: '/images/logos/pl8chat-logo.png',
+    imgClass: 'relative w-full h-full',
+
+    stack: [
+      stack.nextjs,
+      stack.tailwindcss,
+      stack.typescript,
+      stack.react,
+      stack.apple,
+      stack.android,
+    ],
+    link: 'https://pl8chat.com',
   },
 ];

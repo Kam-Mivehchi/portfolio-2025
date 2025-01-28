@@ -1,33 +1,20 @@
-import React from "react";
-
-import { CustomLink } from "./CustomLink";
-import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineTwitter,
-} from "react-icons/ai";
-import { navItems } from "@/constants/navItems";
-import { Logo } from "./Logo";
-import { user } from "@/constants/user";
+import { navItems } from '@/constants/navItems';
+import { user } from '@/constants/user';
+import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
+import { CustomLink } from './CustomLink';
+import { Logo } from './Logo';
 
 export const Footer = () => {
   const socials = [
     {
-      name: "twitter",
-      icon: (
-        <AiOutlineTwitter className="h-5 w-5 hover:text-primary transition duration-150" />
-      ),
-      link: user.twitter,
-    },
-    {
-      name: "LinkedIn",
+      name: 'LinkedIn',
       icon: (
         <AiOutlineLinkedin className="h-5 w-5 hover:text-primary transition duration-150" />
       ),
       link: user.linkedin,
     },
     {
-      name: "GitHub",
+      name: 'GitHub',
       icon: (
         <AiOutlineGithub className="h-5 w-5 hover:text-primary transition duration-150" />
       ),
@@ -44,8 +31,7 @@ export const Footer = () => {
             <CustomLink
               key={`footer-link-${idx}`}
               href={navItem.link}
-              className="text-zinc-100 text-sm relative"
-            >
+              className="text-zinc-100 text-sm relative">
               <span className="relative z-10 px-2 py-2 inline-block">
                 {navItem.name}
               </span>
@@ -53,8 +39,7 @@ export const Footer = () => {
           ))}
         </div>
         <p className="text-zinc-200 text-sm font-light text-center mt-8 border-t border-zinc-800 pt-4">
-          © {new Date().getFullYear()} Devpro Portfolio Template. All rights
-          reserved.
+          © {new Date().getFullYear()} Kamyar Mivehchi. All rights reserved.
         </p>
         <div className="flex flex-row justify-center space-x-2 mt-2">
           {socials.map((socialLink: any, idx: number) => (
@@ -62,8 +47,7 @@ export const Footer = () => {
               key={`footer-link-${idx}`}
               href={socialLink.link}
               className="text-zinc-500 text-sm relative"
-              target="__blank"
-            >
+              target="__blank">
               <span className="relative z-10 px-2 py-2 inline-block">
                 {socialLink.icon}
               </span>

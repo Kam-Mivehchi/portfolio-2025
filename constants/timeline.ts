@@ -1,50 +1,60 @@
 export const timeline = [
   {
+    year: 2025,
+    points: [
+      'Optimizing AI-generated content workflows, making RestaurantAssociation.com the #1 resource in the industry.',
+      'Exploring new technologies like LLM fine-tuning and advanced automation for business growth.',
+      'Expanding Zip Marketing, ZipTunes, FullFork, and Zip Loyalty with new features and partnerships.',
+    ],
+  },
+  {
+    year: 2024,
+    points: [
+      'Developing and scaling Zip Marketing, ZipTunes, FullFork, and Zip Loyalty for the restaurant industry.',
+      'Refining CI/CD pipelines for mobile and web applications, streamlining deployments for multiple brands.',
+      'Took over an abandoned sales app and rebuilt it into the primary platform for closing deals.',
+      'Developed an AI-driven content system for RestaurantAssociation.com, reducing content costs by 99%.',
+      'Led the transformation of RestaurantAssociation.com into an industry-leading platform using Next.js.',
+    ],
+  },
+  {
     year: 2023,
     points: [
-      "Building a new startup, this time it's going to be a big one",
-      "Started writing blogs as a daily habit. Won the nobel prize for literature",
-      "My brother went on to pursue a career in music, he's now a famous singer",
+      'Built a React Native loyalty app for multiple brands, streamlining white-label deployment.',
     ],
   },
   {
     year: 2022,
     points: [
-      "Bought a new M2 chip macbook pro wow this is crazy!",
-      "Broke the chip as soon as I got it, had to buy a new one",
-      "Bought a new M2 chip macbook pro and started living on the streets.",
+      'Completed a coding bootcamp and transitioned into software development.',
+      'Worked as a Teaching Assistant at 2U, mentoring students in full-stack web development.',
+      'Started working at Altametrics, developing scalable applications with Next.js and PostgreSQL.',
+      'Developed expertise in Vue, Nuxt, and EdgeDB while working on scalable applications.',
+      'Refined SEO strategies and automation techniques, boosting search rankings for various projects.',
     ],
   },
   {
     year: 2021,
     points: [
-      "Won the interstate merathon, died 4 times on the way.",
-      "Built a side project to help the people of my country win the war against covid",
-      "Started a podcast with my brother, we talk about the latest tech news",
+      'Began exploring programming in my free time while working as a chemist.',
+      'Started experimenting with JavaScript, building small projects to learn the fundamentals.',
+      'Decided to transition into tech and enrolled in a full-stack coding bootcamp.',
     ],
   },
   {
     year: 2020,
     points: [
-      "Back at it again, this time joined facebook as a software engineer",
-      "Went on to jump right in the metaverse, and joined Oculus as a software engineer",
-      "Champion of international tetris competition held between me and my brother",
+      'Worked as an R&D Analytical Chemist at Shepard Bros, formulating cleaning solutions and ensuring product quality.',
+      'Performed extensive product testing to maintain chemical specifications and performance standards.',
+      'Collaborated with teams to troubleshoot customer issues with competing cleaning products.',
     ],
   },
   {
     year: 2019,
     points: [
-      "Mid life crisis and decided to change career",
-      "Went on to do a Masters in Data Science",
-      "Ended up owning a farm and a small business",
-    ],
-  },
-  {
-    year: 2018,
-    points: [
-      "Graduate with a Bachelor of Mathematics",
-      "Graduate with a Bachelor of Computer Science",
-      "Graduate with a Bachelor of Statistics",
+      'Graduated with a degree in Chemistry.',
+      'Began working in the chemical industry, specializing in research and development.',
+      'Gained expertise in quality control, chemical formulations, and analytical testing.',
     ],
   },
 ];

@@ -1,11 +1,11 @@
-import { workExperience } from "@/constants/workExperience";
-import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
-import Beam from "./Beam/Beam";
-import moment from "moment";
-import { BsCheck2 } from "react-icons/bs";
-import Image from "next/image";
+import { workExperience } from '@/constants/workExperience';
+import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
+import moment from 'moment';
+import Image from 'next/image';
+import { useState } from 'react';
+import { BsCheck2 } from 'react-icons/bs';
+import Beam from './Beam/Beam';
 
 export const Experience = () => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -17,9 +17,7 @@ export const Experience = () => {
       <h1 className="text-2xl md:text-3xl text-white font-bold max-w-5xl mx-auto mt-20 md:mt-40">
         Work Experience
       </h1>
-      <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 leading-loose tracking-wide ">
-        I switch a lot of companies. It's mostly about the culture.
-      </p>
+      <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 leading-loose tracking-wide "></p>
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 mt-20 max-w-2xl mx-auto">
         <div className="flex flex-row md:flex-col relative overflow-x-auto md:overflow-x-visible">
           <div className="absolute -left-6 w-px h-full bg-zinc-800 overflow-hidden">
@@ -31,8 +29,7 @@ export const Experience = () => {
               key={`exp-${idx}`}
               className="relative my-2"
               onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
+              onMouseLeave={() => setHoveredIndex(null)}>
               <AnimatePresence>
                 {hoveredIndex === idx && (
                   <motion.span
@@ -53,12 +50,11 @@ export const Experience = () => {
               <button
                 onClick={() => setActiveWorkExperience(exp)}
                 className={clsx(
-                  "px-4 py-2 text-zinc-400 relative z-20 min-w-28 w-full text-left rounded-md flex flex-row space-x-2 items-center group",
+                  'px-4 py-2 text-zinc-400 relative z-20 min-w-28 w-full text-left rounded-md flex flex-row space-x-2 items-center group',
                   activeWorkExperience?.company === exp.company
-                    ? "bg-zinc-800"
+                    ? 'bg-zinc-800'
                     : null
-                )}
-              >
+                )}>
                 <div className="bg-red-500 p-1 h-6 w-6 flex items-center justify-center rounded-full bg-gradient-to-br from-zinc-700 to-zinc-800">
                   <Image
                     src={exp.logo}
@@ -87,18 +83,19 @@ export const Experience = () => {
                   opacity: 0,
                   transition: { duration: 0.15 },
                 }}
-                layoutId={activeWorkExperience?.company}
-              >
+                layoutId={activeWorkExperience?.company}>
                 <h1 className="text-2xl font-bold text-zinc-100">
-                  {activeWorkExperience?.role}{" "}
+                  {activeWorkExperience?.role}{' '}
                   <span className="text-cyan-500">
                     @ {activeWorkExperience?.company}
                   </span>
                 </h1>
 
                 <div className="text-zinc-400 text-sm tracking-widest">
-                  {moment(activeWorkExperience?.startDate).format("MMM YYYY")} -{" "}
-                  {moment(activeWorkExperience?.endDate).format("MMM YYYY")}
+                  {moment(activeWorkExperience?.startDate).format('MMM YYYY')} -{' '}
+                  {activeWorkExperience.endDate === typeof Date
+                    ? moment(activeWorkExperience?.endDate).format('MMM YYYY')
+                    : activeWorkExperience?.endDate}
                 </div>
                 <p className="text-zinc-400 text-sm">
                   {activeWorkExperience?.location}
@@ -108,8 +105,7 @@ export const Experience = () => {
                   {activeWorkExperience?.description.map((bullet, idx) => (
                     <div
                       key={`bullet-${idx}`}
-                      className="flex flex-row space-x-2 items-start my-2"
-                    >
+                      className="flex flex-row space-x-2 items-start my-2">
                       <BsCheck2 className="text-cyan-500 mt-[3px] flex-shrink-0" />
                       <span className="text-zinc-400 text-sm">{bullet}</span>
                     </div>

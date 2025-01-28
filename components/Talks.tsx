@@ -1,7 +1,5 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import React from "react";
-import { AiFillPlayCircle } from "react-icons/ai";
+import Image from 'next/image';
+import { AiFillPlayCircle } from 'react-icons/ai';
 
 const Talks = ({
   url,
@@ -20,8 +18,7 @@ const Talks = ({
     <a
       href={url}
       className="flex flex-col md:flex-row space-x-0 md:space-x-4 mb-20 relative justify-start items-start group"
-      target="__blank"
-    >
+      target="__blank">
       <Image
         src={image}
         width={1024}
@@ -40,7 +37,7 @@ const Talks = ({
           </h4>
           <p className="text-zinc-400 text-sm">{description}</p>
           <p className="text-zinc-600 group-hover:text-cyan-500 transition duration-200 text-sm mt-2 inline-block">
-            <AiFillPlayCircle className="inline-block mb-[2px]" />{" "}
+            <AiFillPlayCircle className="inline-block mb-[2px]" />{' '}
             <span>Watch Video</span>
           </p>
         </div>

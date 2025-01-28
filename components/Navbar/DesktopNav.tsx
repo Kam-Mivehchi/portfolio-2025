@@ -1,8 +1,7 @@
-import { CustomLink } from "@/components/CustomLink";
-import { Logo } from "@/components/Logo";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import React, { useState } from "react";
+import { CustomLink } from '@/components/CustomLink';
+import { Logo } from '@/components/Logo';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 export const DesktopNav = ({ navItems }: any) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -15,8 +14,7 @@ export const DesktopNav = ({ navItems }: any) => {
           href={navItem.link}
           className="text-white text-sm relative"
           onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
+          onMouseLeave={() => setHoveredIndex(null)}>
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span

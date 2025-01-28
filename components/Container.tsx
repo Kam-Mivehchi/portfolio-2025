@@ -1,23 +1,21 @@
-import clsx from "clsx";
-import Head from "next/head";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { AiFillRightCircle } from "react-icons/ai";
-import { Contact } from "./Contact";
-import { Footer } from "./Footer";
+import clsx from 'clsx';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { Contact } from './Contact';
+import { Footer } from './Footer';
 
-import Navbar from "./Navbar/Navbar";
+import Navbar from './Navbar/Navbar';
 
 export const Container = (props: any) => {
   const { children, className, ...customMeta } = props;
   const router = useRouter();
 
-  const title = "Devpro | Portfolio Template";
+  const title = 'Kamyar Mivehchi | Full Stack Software Engineer';
   const meta = {
     title,
-    description: `A portfolio template for developers and designers.`,
-    type: "website",
-    image: "https://devpro.aceternity.com/banner.png",
+    description: `Full Stack Software Engineer`,
+    type: 'website',
+    image: 'https://devpro.aceternity.com/banner.png',
     ...customMeta,
   };
 
@@ -47,18 +45,17 @@ export const Container = (props: any) => {
         <meta name="twitter:image" content={meta.image} />
       </Head>
 
-      <main className={clsx("min-h-screen antialiased bg-zinc-900", className)}>
+      <main className={clsx('min-h-screen antialiased bg-zinc-900', className)}>
         <div className="bg-zinc-800 flex py-2">
-          <div className="max-w-4xl mx-auto ">
+          {/* <div className="max-w-4xl mx-auto ">
             <a
               href="https://aceternity.lemonsqueezy.com/checkout/buy/f72cfb2a-7598-4e4e-8ef2-1f68c91d9414"
               target="__blank"
-              className="text-zinc-300 flex flex-row space-x-1 items-center text-sm"
-            >
-              <span>Buy now!</span>{" "}
+              className="text-zinc-300 flex flex-row space-x-1 items-center text-sm">
+              <span>Buy now!</span>{' '}
               <AiFillRightCircle className="inline-block" />
             </a>
-          </div>
+          </div> */}
         </div>
         <Navbar />
         {children}

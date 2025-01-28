@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import Image from "next/image";
-import React, { useState } from "react";
+import clsx from 'clsx';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface IBlurImage {
   height?: any;
@@ -28,8 +28,8 @@ export const BlurImage = ({
   return (
     <Image
       className={clsx(
-        "transition duration-500",
-        isLoading ? "blur-sm scale-100" : " blur-0 scale-100",
+        'transition duration-500',
+        isLoading ? 'blur-sm scale-100' : ' blur-0 scale-100',
         className
       )}
       onLoadingComplete={() => setLoading(false)}
@@ -40,7 +40,7 @@ export const BlurImage = ({
       decoding="async"
       blurDataURL={src}
       layout={layout}
-      alt={alt ? alt : "Avatar"}
+      alt={alt ? alt : 'Avatar'}
       {...rest}
     />
   );

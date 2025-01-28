@@ -1,9 +1,9 @@
-import { Repository } from "@/types/repos";
-import { truncateText } from "@/util/truncateText";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import React, { useState } from "react";
-import { AiOutlineFork, AiOutlineStar } from "react-icons/ai";
+import { Repository } from '@/types/repos';
+import { truncateText } from '@/util/truncateText';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
+import { useState } from 'react';
+import { AiOutlineFork, AiOutlineStar } from 'react-icons/ai';
 
 export const LatestRepos = ({
   repos,
@@ -23,8 +23,7 @@ export const LatestRepos = ({
             onMouseEnter={() => setHoveredIndex(idx)}
             key={repo?.html_url}
             onMouseLeave={() => setHoveredIndex(null)}
-            className="group relative rounded-2xl border border-zinc-800 shadow-sm p-4 bg-gradient-to-b from-zinc-800 to-zinc-900 flex flex-col justify-between h-full"
-          >
+            className="group relative rounded-2xl border border-zinc-800 shadow-sm p-4 bg-gradient-to-b from-zinc-800 to-zinc-900 flex flex-col justify-between h-full">
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
@@ -75,8 +74,7 @@ export const LatestRepos = ({
           <div className="flex justify-center relative z-[70] ">
             <Link
               href="/contributions"
-              className="text-zinc-200 border border-zinc-600 bg-zinc-900 px-8 py-2 rounded-lg hover:border-zinc-700 hover:bg-zinc-800/[0.8] transition duration-200"
-            >
+              className="text-zinc-200 border border-zinc-600 bg-zinc-900 px-8 py-2 rounded-lg hover:border-zinc-700 hover:bg-zinc-800/[0.8] transition duration-200">
               Show More
             </Link>
           </div>

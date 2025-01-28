@@ -1,5 +1,4 @@
-import { uses } from "@/constants/uses";
-import React from "react";
+import { uses } from '@/constants/uses';
 
 export const Uses = () => {
   return (

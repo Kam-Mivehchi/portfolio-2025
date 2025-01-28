@@ -1,7 +1,6 @@
-import { timeline } from "@/constants/timeline";
-import React from "react";
-import { HiOutlineCheckCircle } from "react-icons/hi2";
-import Beam from "./Beam/Beam";
+import { timeline } from '@/constants/timeline';
+import { HiOutlineCheckCircle } from 'react-icons/hi2';
+import Beam from './Beam/Beam';
 
 export const Timeline = () => {
   return (
@@ -20,8 +19,7 @@ export const Timeline = () => {
             {item.points.map((point: any, idx: number) => (
               <div
                 key={`timeline-item-${idx}`}
-                className="flex flex-row space-x-2 items-start my-2"
-              >
+                className="flex flex-row space-x-2 items-start my-2">
                 <HiOutlineCheckCircle className="text-cyan-500 mt-[3px] flex-shrink-0" />
                 <span className="text-zinc-400 text-sm md:text-base">
                   {point}

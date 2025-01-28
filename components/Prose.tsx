@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
 export function Prose({
   children,
@@ -11,9 +11,8 @@ export function Prose({
     <div
       className={clsx(
         className,
-        "prose prose-sm md:prose-base prose-invert prose-cyan"
-      )}
-    >
+        'prose prose-sm md:prose-base prose-invert prose-cyan'
+      )}>
       {children}
     </div>
   );

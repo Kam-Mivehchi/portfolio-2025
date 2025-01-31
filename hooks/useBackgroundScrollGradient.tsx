@@ -32,7 +32,6 @@ function useBackgroundScrollGradient(
     // ensures a loop if mismatch in breakpoint length
     const currentBackgroundIndex = currentBreakpointIndex % backgrounds.length;
     setBackgroundColor(backgrounds[currentBackgroundIndex]);
-    console.log(backgroundColor);
   });
   return { backgroundColor };
 }

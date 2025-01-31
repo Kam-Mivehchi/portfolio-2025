@@ -1,5 +1,5 @@
-import { Repository } from "@/types/repos";
-import { Octokit } from "octokit";
+import { Repository } from '@/types/repos';
+import { Octokit } from 'octokit';
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
@@ -19,11 +19,11 @@ export const getUserRepositories = async (username: string) => {
     try {
       const { data } = await octokit.rest.repos.listForUser({
         username,
-        direction: "desc",
+        direction: 'desc',
         per_page: 20,
-        visibility: "public",
+        visibility: 'public',
         public: true,
-        sort: "updated",
+        sort: 'updated',
         owner: username,
       });
 

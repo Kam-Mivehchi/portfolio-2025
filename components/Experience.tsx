@@ -17,8 +17,8 @@ export const Experience = () => {
       <h1 className="text-2xl md:text-3xl text-white font-bold max-w-5xl mx-auto mt-20 md:mt-40">
         Work Experience
       </h1>
-      <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 leading-loose tracking-wide "></p>
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 mt-20 max-w-2xl mx-auto">
+
+      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 mt-10 max-w-2xl mx-auto">
         <div className="flex flex-row md:flex-col relative overflow-x-auto md:overflow-x-visible">
           <div className="absolute -left-6 w-px h-full bg-zinc-800 overflow-hidden">
             <Beam showBeam={true} className={`-left-0`} />
@@ -33,7 +33,7 @@ export const Experience = () => {
               <AnimatePresence>
                 {hoveredIndex === idx && (
                   <motion.span
-                    className="absolute inset-0 h-full w-full bg-zinc-800  rounded-md"
+                    className="absolute inset-0 h-full w-full bg-teal-500  rounded-md"
                     layoutId="hoverBackground"
                     initial={{ opacity: 0 }}
                     animate={{

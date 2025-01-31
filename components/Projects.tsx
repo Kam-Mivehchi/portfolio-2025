@@ -1,7 +1,6 @@
 import { projects } from '@/constants/projects';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { encode } from 'qss';
 import { useState } from 'react';
 
 import { BsTerminal } from 'react-icons/bs';
@@ -9,26 +8,6 @@ import { BsTerminal } from 'react-icons/bs';
 export const Projects = () => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  function getLinkPreview(url: string) {
-    const width = 200;
-    const height = 125;
-
-    // Simplifies things by encoding our microlink params into a query string.
-    const params = encode({
-      url,
-      screenshot: true,
-      meta: false,
-      embed: 'screenshot.url',
-      colorScheme: 'dark',
-      'viewport.isMobile': true,
-      'viewport.deviceScaleFactor': 1,
-
-      'viewport.width': width * 3,
-      'viewport.height': height * 3,
-    });
-
-    return `https://api.microlink.io/?${params}`;
-  }
   return (
     <div className="max-w-5xl mx-auto px-8">
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 mt-20">
@@ -42,7 +21,7 @@ export const Projects = () => {
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-zinc-800/[0.8]  rounded-3xl"
+                  className="absolute inset-0 h-full w-full bg-cyan-500/[.4]  rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
@@ -61,10 +40,10 @@ export const Projects = () => {
                 <div className="h-44 sm:h-60 md:h-44 w-full relative  transition duration-500 bg-black/10 group-hover:bg-transparent">
                   <div className=" group-hover:bg-zinc-800 absolute h-20 bg-zinc-900 w-full bottom-0 z-20 [mask-image:linear-gradient(to_bottom,transparent,transparent,white)] transition duration-500" />
                   <Image
-                    src={getLinkPreview(project.link)}
+                    src={project.image}
                     alt={project.title}
                     fill
-                    className=" absolute inset-0 object-cover object-center  mix-blend-multiply"
+                    className=" absolute inset-0 object-cover object-top  mix-blend-multiply"
                   />
                 </div>
                 <div className="p-4">
@@ -91,7 +70,7 @@ export const Projects = () => {
                     <p
                       // href={project.link}
                       className="text-zinc-500 group-hover:text-cyan-500 text-xs">
-                      View Source
+                      View
                     </p>
                   </div>
                 </div>

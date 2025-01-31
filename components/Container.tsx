@@ -3,12 +3,24 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Contact } from './Contact';
 import { Footer } from './Footer';
-
 import Navbar from './Navbar/Navbar';
+import { useBackgroundScrollGradient } from '@/hooks/useBackgroundScrollGradient';
+import { motion } from 'framer-motion';
+import { CSSProperties } from 'react';
+
+const gradients: Record<string, Exclude<CSSProperties['color'], undefined>[]> =
+  {
+    a: ['#0e1c26', '#2a454b', '#294861'],
+    b: ['#1f2937', '#262626', '#1e293b'],
+    c: ['#18181b', '#262626', '#1f2937'],
+  };
+const backgroundSet = gradients.c;
 
 export const Container = (props: any) => {
   const { children, className, ...customMeta } = props;
   const router = useRouter();
+
+  const { backgroundColor } = useBackgroundScrollGradient(backgroundSet);
 
   const title = 'Kamyar Mivehchi | Full Stack Software Engineer';
   const meta = {
@@ -45,23 +57,16 @@ export const Container = (props: any) => {
         <meta name="twitter:image" content={meta.image} />
       </Head>
 
-      <main className={clsx('min-h-screen antialiased bg-zinc-900', className)}>
-        <div className="bg-zinc-800 flex py-2">
-          {/* <div className="max-w-4xl mx-auto ">
-            <a
-              href="https://aceternity.lemonsqueezy.com/checkout/buy/f72cfb2a-7598-4e4e-8ef2-1f68c91d9414"
-              target="__blank"
-              className="text-zinc-300 flex flex-row space-x-1 items-center text-sm">
-              <span>Buy now!</span>{' '}
-              <AiFillRightCircle className="inline-block" />
-            </a>
-          </div> */}
-        </div>
+      <motion.main
+        className={clsx('min-h-screen antialiased ', className)}
+        animate={{
+          background: backgroundColor,
+        }}>
         <Navbar />
         {children}
         <Footer />
         <Contact />
-      </main>
+      </motion.main>
     </>
   );
 };

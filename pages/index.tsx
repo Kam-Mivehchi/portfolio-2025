@@ -8,12 +8,6 @@ import { Repository } from '@/types/repos';
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ repos }: { repos: Repository[] }) {
-  const shouldShowMore = () => {
-    if (repos && repos.length > 9) {
-      return true;
-    }
-    return false;
-  };
   return (
     <Container>
       <Hero />

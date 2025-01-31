@@ -1,4 +1,4 @@
-export type MetaData = {
+type MetaData = {
   title: string;
   description: string | undefined;
   image: string | undefined;

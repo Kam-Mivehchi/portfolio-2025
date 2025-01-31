@@ -55,7 +55,9 @@ export const Experience = () => {
                   activeWorkExperience?.company === exp.company
                     ? 'bg-teal-500 text-black'
                     : 'text-zinc-400 ',
-                  hoveredIndex === idx && 'text-teal-500'
+                  hoveredIndex === idx &&
+                    activeWorkExperience?.company !== exp.company &&
+                    'text-teal-500'
                 )}>
                 <div className="bg-red-500 p-1 h-6 w-6 flex items-center justify-center rounded-full bg-gradient-to-br from-zinc-700 to-zinc-800">
                   <Image

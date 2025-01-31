@@ -51,10 +51,10 @@ export const Experience = () => {
               <button
                 onClick={() => setActiveWorkExperience(exp)}
                 className={clsx(
-                  'px-4 py-2 text-zinc-400 relative z-20 min-w-28  text-left rounded-md flex flex-row space-x-2 items-center group w-max md:w-full',
+                  'px-4 py-2 relative z-20 min-w-28  text-left rounded-md flex flex-row space-x-2 items-center group w-max md:w-full transition-color',
                   activeWorkExperience?.company === exp.company
                     ? 'bg-teal-500 text-black'
-                    : null,
+                    : 'text-zinc-400 ',
                   hoveredIndex === idx && 'text-teal-500'
                 )}>
                 <div className="bg-red-500 p-1 h-6 w-6 flex items-center justify-center rounded-full bg-gradient-to-br from-zinc-700 to-zinc-800">

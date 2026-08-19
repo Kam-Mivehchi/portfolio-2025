@@ -23,6 +23,7 @@ export const Logo = ({
         height={30}
         src={`/images/avatar-1.png`}
         className="rounded-full"
+        priority
       />
       <span className={twMerge('font-inter font-bold', textClassName)}>
         Kamyar Mivehchi

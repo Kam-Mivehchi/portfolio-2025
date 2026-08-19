@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import { BsTerminal } from 'react-icons/bs';
 
-export const Projects = () => {
+export const Projects = ({ priorityCount = 0 }: { priorityCount?: number }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -43,6 +43,9 @@ export const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    placeholder="blur"
+                    priority={idx < priorityCount}
                     className=" absolute inset-0 object-cover object-top  mix-blend-multiply"
                   />
                 </div>

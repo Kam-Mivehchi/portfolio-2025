@@ -1,0 +1,5 @@
+# See .pnpmfile.cjs — it gives TS-compiler-API consumers (typescript-eslint,
+# knip) the @typescript/typescript6 compat package while the project's
+# `typescript` is v7 (native compiler, no programmatic API until 7.1).
+packages:
+  - '.'

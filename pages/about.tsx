@@ -58,6 +58,7 @@ export default function ProjectsPage() {
             height={200}
             alt="Avatar"
             className="rounded-2xl"
+            priority
           />
           <div className="flex flex-row justify-start md:justify-center space-x-2 mt-2">
             {socials.map((socialLink: any, idx: number) => (

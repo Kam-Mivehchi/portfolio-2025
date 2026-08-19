@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         </p>
       </div>
 
-      <Projects />
+      <Projects priorityCount={3} />
     </Container>
   );
 }

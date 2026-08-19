@@ -32,9 +32,7 @@ export const BlurImage = ({
       src={src}
       width={width}
       height={height}
-      loading="lazy"
       decoding="async"
-      blurDataURL={src}
       alt={alt ? alt : 'Avatar'}
       {...rest}
     />

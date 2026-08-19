@@ -1,7 +1,9 @@
 import { workExperience } from '@/constants/workExperience';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
-import moment from 'moment';
+// "January 2024" -> "Jan 2024"; non-date strings like "Present" pass through
+const formatMonthYear = (value: string) =>
+  value.replace(/^([A-Za-z]{3})[A-Za-z]*\s+(\d{4})$/, '$1 $2');
 import Image from 'next/image';
 import { useState } from 'react';
 import { BsCheck2 } from 'react-icons/bs';
@@ -96,10 +98,8 @@ export const Experience = () => {
                 </h1>
 
                 <div className="text-zinc-400 text-sm tracking-widest">
-                  {moment(activeWorkExperience?.startDate).format('MMM YYYY')} -{' '}
-                  {activeWorkExperience.endDate === typeof Date
-                    ? moment(activeWorkExperience?.endDate).format('MMM YYYY')
-                    : activeWorkExperience?.endDate}
+                  {formatMonthYear(activeWorkExperience?.startDate)} -{' '}
+                  {formatMonthYear(activeWorkExperience?.endDate)}
                 </div>
                 <p className="text-zinc-400 text-sm">
                   {activeWorkExperience?.location}

@@ -8,42 +8,41 @@ const Beam = ({ showBeam, className }: any) => {
   const meteorRef = useRef<any>(null);
 
   useEffect(() => {
-    if (showBeam) {
-      const meteor = meteorRef.current;
+    if (!showBeam) return;
 
-      meteor.addEventListener('animationend', () => {
-        meteor.style.visibility = 'hidden';
-        const animationDelay = Math.floor(Math.random() * (3 - 0) + 0);
-        const animationDuration = Math.floor(Math.random() * (4 - 0) + 0);
-        const meteorWidth = Math.floor(Math.random() * (150 - 80) + 80);
-        meteor.style.setProperty('--meteor-delay', `${animationDelay}s`);
-        meteor.style.setProperty('--meteor-duration', `${animationDuration}s`);
-        meteor.style.setProperty('--meteor-width', `${meteorWidth}px`);
+    const meteor = meteorRef.current;
+    if (!meteor) return;
 
-        restartAnimation();
-      });
+    const restartAnimation = () => {
+      meteor.style.animation = 'none';
+      void meteor.offsetWidth;
+      meteor.style.animation = null;
+    };
 
-      meteor.addEventListener('animationstart', () => {
-        meteor.style.visibility = 'visible';
-      });
-    }
+    const handleAnimationEnd = () => {
+      meteor.style.visibility = 'hidden';
+      const animationDelay = Math.floor(Math.random() * (3 - 0) + 0);
+      const animationDuration = Math.floor(Math.random() * (4 - 0) + 0);
+      const meteorWidth = Math.floor(Math.random() * (150 - 80) + 80);
+      meteor.style.setProperty('--meteor-delay', `${animationDelay}s`);
+      meteor.style.setProperty('--meteor-duration', `${animationDuration}s`);
+      meteor.style.setProperty('--meteor-width', `${meteorWidth}px`);
+
+      restartAnimation();
+    };
+
+    const handleAnimationStart = () => {
+      meteor.style.visibility = 'visible';
+    };
+
+    meteor.addEventListener('animationend', handleAnimationEnd);
+    meteor.addEventListener('animationstart', handleAnimationStart);
 
     return () => {
-      if (showBeam) {
-        const meteor = meteorRef.current;
-        if (meteor) {
-          meteor.removeEventListener('animationend', () => {});
-          meteor.removeEventListener('animationstart', () => {});
-        }
-      }
+      meteor.removeEventListener('animationend', handleAnimationEnd);
+      meteor.removeEventListener('animationstart', handleAnimationStart);
     };
-  }, []);
-  const restartAnimation = () => {
-    const meteor = meteorRef.current;
-    meteor.style.animation = 'none';
-    void meteor.offsetWidth;
-    meteor.style.animation = null;
-  };
+  }, [showBeam]);
 
   return (
     showBeam && (

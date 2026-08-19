@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { useState } from 'react';
 
 export const Contact = () => {
@@ -18,7 +18,7 @@ export const Contact = () => {
     },
   });
 
-  const dropIn = {
+  const dropIn: Variants = {
     hidden: {
       y: '4vh',
       opacity: 0,
@@ -28,7 +28,7 @@ export const Contact = () => {
       opacity: 1,
       transition: {
         duration: 0.2,
-        type: 'stiff',
+        type: 'spring',
         damping: 25,
       },
     },
@@ -106,7 +106,7 @@ export const Contact = () => {
                 Have a question? Drop in your message 👇
               </h2>
               <small className="hidden md:block text-xs text-zinc-400 mb-10 ">
-                It won't take more than 10 seconds. Shoot your shot. 😉
+                It won&apos;t take more than 10 seconds. Shoot your shot. 😉
               </small>
             </div>
             <div className="content p-6 flex flex-col bg-zinc-800">

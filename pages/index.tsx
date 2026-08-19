@@ -13,7 +13,7 @@ export default function Home({ repos }: { repos: Repository[] }) {
       <Hero />
       <Experience />
       <h1 className="text-2xl md:text-3xl text-white font-bold max-w-5xl mx-auto px-8  mt-40">
-        I've been building a lot of things
+        I&apos;ve been building a lot of things
       </h1>
 
       <Projects />

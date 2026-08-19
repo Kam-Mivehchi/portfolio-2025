@@ -1,30 +1,15 @@
 /** @type {import('next').NextConfig} */
-import nextMDX from '@next/mdx';
-import remarkGfm from 'remark-gfm';
-import rehypePrism from '@mapbox/rehype-prism';
-
 const nextConfig = {
-  pageExtensions: ['tsx', 'mdx'],
   reactStrictMode: true,
   images: {
-    domains: [
-      'example.com', // Example domain
-      'api.microlink.io', // Microlink Image Preview
-      'avatars.githubusercontent.com', // GitHub avatars
+    remotePatterns: [
+      { protocol: 'https', hostname: 'api.microlink.io' }, // Microlink Image Preview
+      { protocol: 'https', hostname: 'avatars.githubusercontent.com' }, // GitHub avatars
     ],
   },
   experimental: {
-    newNextLinkBehavior: true,
     scrollRestoration: true,
   },
 };
 
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-  },
-});
-
-export default withMDX(nextConfig);
+export default nextConfig;

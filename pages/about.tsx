@@ -38,8 +38,8 @@ export default function ProjectsPage() {
       <div className="max-w-5xl mx-auto px-8 md:mt-20 relative flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-10 justify-between">
         <div>
           <h1 className="font-bold text-3xl md:text-5xl md:leading-tight text-zinc-50 max-w-3xl">
-            Hey! I'm
-            <span className="text-cyan-500"> Kamyar Mivehchi</span> and I'm a
+            Hey! I&apos;m
+            <span className="text-cyan-500"> Kamyar Mivehchi</span> and I&apos;m a
             full stack Web and Mobile engineer.
           </h1>
           <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 md:leading-loose tracking-wide">
@@ -85,7 +85,7 @@ export default function ProjectsPage() {
           forward.
         </p>
         <p className="text-zinc-400 text-sm md:text-base mt-8 md:leading-loose tracking-wide">
-          Here's a timeline of what I've been up to
+          Here&apos;s a timeline of what I&apos;ve been up to
         </p>
         <Timeline />
       </div>

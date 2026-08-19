@@ -1,5 +1,5 @@
 import { Logo } from '@/components/Logo';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { IoIosCloseCircleOutline, IoIosMenu } from 'react-icons/io';
@@ -8,7 +8,7 @@ import { CustomLink } from '../CustomLink';
 
 export const MobileNav = ({ navItems }: any) => {
   const [open, setOpen] = useState(false);
-  const item = {
+  const item: Variants = {
     exit: {
       opacity: 0,
       transition: {
@@ -27,7 +27,7 @@ export const MobileNav = ({ navItems }: any) => {
     },
   };
 
-  const childItems = {
+  const childItems: Variants = {
     hidden: { x: '-2vw', opacity: 0 },
     show: { x: 0, opacity: 1 },
   };

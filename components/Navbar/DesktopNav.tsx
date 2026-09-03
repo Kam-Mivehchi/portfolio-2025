@@ -1,41 +1,39 @@
-import { CustomLink } from '@/components/CustomLink';
-import { Logo } from '@/components/Logo';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
+import clsx from 'clsx';
+import { navItems } from '@/constants/navItems';
 
-export const DesktopNav = ({ navItems }: any) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+const activeIndexForPath = (pathname: string) => {
+  if (pathname.startsWith('/projects')) return 1;
+  if (pathname.startsWith('/about')) return 2;
+  return 0;
+};
+
+export const DesktopNav = () => {
+  const { pathname } = useRouter();
+  const activeIndex = activeIndexForPath(pathname);
+
   return (
-    <div className="flex flex-row space-x-8 items-center antialiased border px-4 py-2 rounded-2xl border-zinc-700/60 bg-zinc-800 ">
-      <Logo />
-      {navItems.map((navItem: any, idx: number) => (
-        <CustomLink
-          key={`link=${idx}`}
-          href={navItem.link}
-          className="text-white text-sm relative"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}>
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0  transform  bg-zinc-700 scale-105 rounded-xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <span className="relative z-10 px-2 py-2 inline-block">
-            {navItem.name}
-          </span>
-        </CustomLink>
+    <div className="relative flex rounded-full bg-white p-1.5 shadow-navpill">
+      <motion.span
+        aria-hidden
+        className="absolute left-1.5 top-1.5 h-10 w-[110px] rounded-full bg-ink"
+        initial={false}
+        animate={{ x: activeIndex * 110 }}
+        transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+      />
+      {navItems.map((item, i) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          aria-current={i === activeIndex ? 'page' : undefined}
+          className={clsx(
+            'relative z-10 w-[110px] py-2.5 text-center text-sm font-semibold transition-colors duration-300',
+            i === activeIndex ? 'text-white' : 'text-stone-600'
+          )}>
+          {item.name}
+        </Link>
       ))}
     </div>
   );

@@ -1,0 +1,16 @@
+export const tools: string[] = [
+  'TypeScript',
+  'React',
+  'Next.js',
+  'React Native',
+  'Node.js',
+  'NestJS',
+  'PostgreSQL',
+  'AWS Lambda',
+  'Docker',
+  'GitHub Actions',
+  'Azure DevOps',
+  'Tailwind CSS',
+  'Vercel',
+  'LLM APIs',
+];

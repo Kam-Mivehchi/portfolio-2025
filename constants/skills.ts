@@ -1,0 +1,19 @@
+import type { Skill } from '@/types/content';
+
+export const skills: Skill[] = [
+  {
+    title: 'Front end',
+    body: 'React, Next.js, React Native. Interfaces that feel fast and stay maintainable.',
+    color: '#E4572E',
+  },
+  {
+    title: 'Back end and data',
+    body: 'Node.js, NestJS, PostgreSQL, AWS. Clean schemas and APIs that scale.',
+    color: '#5B4BFF',
+  },
+  {
+    title: 'Automation and delivery',
+    body: 'CI/CD, Docker, GitHub Actions, AI pipelines. Systems that run without babysitting.',
+    color: '#0E9F6E',
+  },
+];

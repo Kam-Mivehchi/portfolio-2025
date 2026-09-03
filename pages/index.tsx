@@ -1,22 +1,27 @@
-import { Container } from '@/components/Container';
-import { Experience } from '@/components/Experience';
-import { Hero } from '@/components/Hero';
-import { Projects } from '@/components/Projects';
+import { CtaFooter } from '@/components/CtaFooter';
+import { ExperienceRows } from '@/components/home/ExperienceRows';
+import { HomeHero } from '@/components/home/HomeHero';
+import { SelectedWork } from '@/components/home/SelectedWork';
+import { Marquee } from '@/components/ui/Marquee';
+import { Seo } from '@/components/Seo';
+import { marqueeItems } from '@/constants/marquee';
 
-import { Repository } from '@/types/repos';
-
-// const inter = Inter({ subsets: ["latin"] });
-
-export default function Home({ repos }: { repos: Repository[] }) {
+export default function Home() {
   return (
-    <Container>
-      <Hero />
-      <Experience />
-      <h1 className="text-2xl md:text-3xl text-white font-bold max-w-5xl mx-auto px-8  mt-40">
-        I&apos;ve been building a lot of things
-      </h1>
-
-      <Projects />
-    </Container>
+    <div className="mx-auto max-w-page">
+      <Seo />
+      <HomeHero />
+      <div
+        className="mt-6 motion-safe:animate-rise"
+        style={{ animationDelay: '.6s' }}>
+        <Marquee items={marqueeItems} />
+      </div>
+      <SelectedWork />
+      <ExperienceRows />
+      <CtaFooter
+        headline="Let's build something."
+        sub="Open to full-time roles and contract work."
+      />
+    </div>
   );
 }

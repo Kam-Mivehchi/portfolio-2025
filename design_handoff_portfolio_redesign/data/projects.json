@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Restaurant Association",
+    "host": "restaurantassociation.com",
+    "tag": "Web",
+    "image": "./projects/restaurant-association.png",
+    "blurb": "Industry news site that pulls in sources, writes with AI, and publishes itself.",
+    "color": "#E4572E",
+    "tint": "#FBE4DC"
+  },
+  {
+    "name": "Huntington Beach Tutoring",
+    "host": "huntingtonbeachtutoring.com",
+    "tag": "Web",
+    "image": "./projects/huntington-beach-tutoring.png",
+    "blurb": "Site for a local tutoring business, built end to end. Ranks for math and science tutoring across Orange County.",
+    "color": "#0891B2",
+    "tint": "#DAF0F5"
+  },
+  {
+    "name": "Westmont House",
+    "host": "westmonthouse.com",
+    "tag": "Web",
+    "image": "./projects/westmont.png",
+    "blurb": "Marketing site for an assisted-living community in McLean, VA.",
+    "color": "#2F6B4F",
+    "tint": "#DDEEE4"
+  },
+  {
+    "name": "Zip Loyalty",
+    "host": "ziployalty.com",
+    "tag": "Mobile",
+    "image": "./projects/ziployalty.png",
+    "blurb": "Loyalty app that measures and rewards repeat customers.",
+    "color": "#5B4BFF",
+    "tint": "#E4E1FF"
+  },
+  {
+    "name": "Plum Tunes",
+    "host": "plum-tunes.com",
+    "tag": "Platforms",
+    "image": "./projects/ziptunes.png",
+    "blurb": "B2B music streaming for setting the mood in a business. Formerly ZipTunes.",
+    "color": "#0E9F6E",
+    "tint": "#DCF3EA"
+  },
+  {
+    "name": "FullFork",
+    "host": "fullfork.com",
+    "tag": "Mobile",
+    "image": "./projects/fullfork.png",
+    "blurb": "Mobile app for restaurants to push discounts and coupon codes.",
+    "color": "#D97706",
+    "tint": "#FBEBD2"
+  },
+  {
+    "name": "Plum POS",
+    "host": "plumpos.com",
+    "tag": "Platforms",
+    "image": "./projects/plumpos.png",
+    "blurb": "Point-of-sale system that simplifies restaurant operations.",
+    "color": "#7C3AED",
+    "tint": "#ECE2FB"
+  },
+  {
+    "name": "Pl8Chat",
+    "host": "App Store",
+    "tag": "Mobile",
+    "image": "./projects/mobile-pl8chat.webp",
+    "blurb": "Customer-support chat built for restaurants, on iOS and Android.",
+    "color": "#B45309",
+    "tint": "#FBEBD2"
+  }
+]

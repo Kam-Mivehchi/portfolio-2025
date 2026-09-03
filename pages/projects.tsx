@@ -1,22 +1,37 @@
-import { Container } from '@/components/Container';
-import { Projects } from '@/components/Projects';
+import { useState } from 'react';
+import { Seo } from '@/components/Seo';
+import { ProjectCard } from '@/components/projects/ProjectCard';
+import {
+  ProjectFilter,
+  ProjectFilters,
+} from '@/components/projects/ProjectFilters';
+import { projects } from '@/constants/projects';
 
 export default function ProjectsPage() {
-  return (
-    <Container title={`Projects | Devpro`}>
-      <div className="max-w-5xl mx-auto px-8 mt-10 md:mt-20 relative">
-        <h1 className="font-bold text-3xl md:text-5xl md:leading-tight text-zinc-50 max-w-3xl">
-          I&apos;ve been building a
-          <span className="text-cyan-500"> lot of things</span>
-        </h1>
-        <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 md:leading-loose tracking-wide">
-          Discover the results of my work—from small creative experiments to
-          fully realized web applications. Each project reflects my passion for
-          coding and design.
-        </p>
-      </div>
+  const [filter, setFilter] = useState<ProjectFilter>('All');
+  const filtered =
+    filter === 'All' ? projects : projects.filter((p) => p.tag === filter);
 
-      <Projects priorityCount={3} />
-    </Container>
+  return (
+    <div className="mx-auto max-w-page">
+      <Seo title="Projects | Kamyar Mivehchi" />
+      <div className="flex flex-col gap-6 px-6 pb-6 pt-14 md:flex-row md:items-end md:justify-between lg:px-14">
+        <h1 className="text-[48px] font-extrabold leading-none tracking-[-0.04em] motion-safe:animate-[rise_.9s_cubic-bezier(.2,.7,.2,1)_both] md:text-[72px]">
+          Projects
+        </h1>
+        <ProjectFilters
+          value={filter}
+          onChange={setFilter}
+          total={projects.length}
+        />
+      </div>
+      <div
+        key={filter}
+        className="grid grid-cols-1 gap-5 px-6 pb-24 lg:grid-cols-2 lg:px-14">
+        {filtered.map((project, i) => (
+          <ProjectCard key={project.slug} project={project} index={i} />
+        ))}
+      </div>
+    </div>
   );
 }

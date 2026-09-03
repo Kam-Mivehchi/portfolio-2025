@@ -10,7 +10,7 @@ export const HomeHero = () => (
         Full-stack software engineer · Orange County, CA
       </div>
       <h1
-        className="text-[56px] font-extrabold leading-[.95] tracking-[-0.04em] [text-wrap:balance] motion-safe:animate-rise md:text-[92px]"
+        className="text-[56px] font-extrabold leading-[1.1] tracking-[-0.04em] [text-wrap:balance] motion-safe:animate-rise md:text-[92px]"
         style={{ animationDelay: '.1s' }}>
         Kamyar Mivehchi
       </h1>

@@ -1,4 +1,5 @@
 import fullfork from '@/public/images/projects/fullfork.png';
+import huntingtonBeachTutoring from '@/public/images/projects/huntington-beach-tutoring.png';
 import mobilePl8chat from '@/public/images/projects/mobile-pl8chat.webp';
 import restaurantAssociation from '@/public/images/projects/restaurant-association.png';
 import westmont from '@/public/images/projects/westmont.png';
@@ -8,6 +9,14 @@ import plumpos from '@/public/images/projects/plumpos.png';
 import { stack } from './stack';
 
 export const projects = [
+  {
+    title: 'Huntington Beach Tutoring',
+    description:
+      'A tutoring business site built end to end — design, SEO, and deployment — ranking for math & science tutoring across Orange County.',
+    image: huntingtonBeachTutoring,
+    stack: [stack.nextjs, stack.typescript, stack.tailwindcss, stack.react],
+    link: 'https://huntingtonbeachtutoring.com',
+  },
   {
     title: 'Restaurant Association',
     description:
@@ -47,12 +56,12 @@ export const projects = [
     link: 'https://ziployalty.com',
   },
   {
-    title: 'ZipTunes',
+    title: 'Plum Tunes',
     description:
-      'A B2B music streaming platform designed for businesses to create the perfect ambiance.',
+      'A B2B music streaming platform (formerly ZipTunes) designed for businesses to create the perfect ambiance.',
     image: ziptunes,
     stack: [stack.react, stack.typescript, stack.tailwindcss],
-    link: 'https://zip-tunes.com',
+    link: 'https://plum-tunes.com',
   },
   {
     title: 'FullFork',

@@ -80,10 +80,10 @@ export default function ProjectsPage() {
         <p className="text-zinc-400 text-sm md:text-base mt-8 md:leading-loose tracking-wide">
           Now a Full-Stack Engineer with expertise in React, Next.js, Node.js,
           Docker, and PostgreSQL, I specialize in scalable web applications, API
-          optimization, and automation. Currently earning a Full Stack Web
-          Development certificate from UC Irvine, I’m passionate about building
-          innovative solutions and collaborating with teams that push technology
-          forward.
+          optimization, and AI-powered products. Currently pursuing an MS in
+          Computer Science at CSU Long Beach (expected 2027), I’m passionate
+          about building innovative solutions and collaborating with teams that
+          push technology forward.
         </p>
         <p className="text-zinc-400 text-sm md:text-base mt-8 md:leading-loose tracking-wide">
           Here&apos;s a timeline of what I&apos;ve been up to

@@ -1,5 +1,14 @@
 export const timeline = [
   {
+    year: 2026,
+    points: [
+      'Started a Cloud Engineer contract at Pacific Life, building full-stack services with TypeScript, Node.js, React, and AWS Lambda.',
+      'Began an MS in Computer Science at CSU Long Beach.',
+      'Launched huntingtonbeachtutoring.com end to end — design, SEO, and deployment — for a local tutoring business.',
+      'Wrapped up 2.5 years at Altametrics as team lead, having hired engineers and shipped 13+ production applications.',
+    ],
+  },
+  {
     year: 2025,
     points: [
       'Optimizing AI-generated content workflows, making RestaurantAssociation.com the #1 resource in the industry.',
